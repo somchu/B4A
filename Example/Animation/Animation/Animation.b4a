@@ -1,0 +1,89 @@
+﻿Build1=Default,anywheresoftware.b4a.samples.animation
+File1=1.bal
+File2=smiley.gif
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=animation
+Library2=core
+ManifestCode=
+NumberOfFiles=2
+NumberOfLibraries=2
+NumberOfModules=0
+Version=9.9
+@EndOfDesignText@
+#Region Module Attributes
+	#FullScreen: False
+	#IncludeTitle: True
+	#ApplicationLabel: Animation Example
+	#VersionCode: 1
+	#VersionName: 
+	#SupportedOrientations: unspecified
+#End Region
+
+'Activity module
+Sub Process_Globals
+	
+End Sub
+
+Sub Globals
+	Dim Button1 As Button
+	Dim Button2 As Button
+	Dim Button3 As Button
+	Dim Button4 As Button
+	Dim Button5 As Button
+	Dim Button6 As Button
+	Dim Button7 As Button
+	Dim Button8 As Button
+	Dim Button9 As Button
+	Dim a6, a7, a8, a9 As Animation
+End Sub 
+
+Sub Activity_Create(FirstTime As Boolean)
+	Dim a1, a2, a3, a4, a5 As Animation
+	Activity.LoadLayout("1")
+	a1.InitializeAlpha("", 1, 0)
+	Button1.Tag = a1
+	a2.InitializeRotate("", 0, 180)
+	Button2.Tag = a2
+	a3.InitializeRotateCenter("", 0, 180, Button3)
+	Button3.Tag = a3
+	a4.InitializeScale("", 1, 1, 0, 0)
+	Button4.Tag = a4
+	a5.InitializeScaleCenter("", 1, 1, 0, 0, Button4)
+	Button5.Tag = a5
+	Dim animations() As Animation
+	animations = Array As Animation(a1, a2, a3, a4, a5)
+	For i = 0 To animations.Length - 1
+		animations(i).Duration = 1000
+		animations(i).RepeatCount = 1
+		animations(i).RepeatMode = animations(i).REPEAT_REVERSE
+	Next
+	a6.InitializeTranslate("Animation", 0, 0, 0dip, 200dip) 'we want to catch the AnimationEnd event for these animations
+	a7.InitializeTranslate("Animation", 0dip, 200dip, -200dip, 200dip) 
+	a8.InitializeTranslate("Animation", -200dip, 200dip, -200dip, 0dip) 
+	a9.InitializeTranslate("Animation", -200dip, 0dip, 0dip, 0dip)
+	Button6.Tag = a6
+	animations = Array As Animation(a6, a7, a8, a9)
+	For i = 0 To animations.Length - 1
+		animations(i).Duration = 500
+	Next
+End Sub
+Sub Animation_AnimationEnd
+	If Sender = a6 Then
+		a7.Start(Button6)
+	Else If Sender = a7 Then
+		a8.Start(Button6)
+	Else If Sender = a8 Then
+		a9.Start(Button6)
+	End If
+End Sub
+Sub Button_Click
+	Dim b As Button
+	b = Sender
+	'Safety check. Not really required in this case.
+	If Not(b.Tag Is Animation) Then Return
+	Dim a As Animation
+	a = b.Tag
+	a.Start(b)
+End Sub
