@@ -2,29 +2,29 @@ b4a.example
 0
 0
 0
-main,activity_create,1,1,29,36
-,imageview1,,fade_timer
+main,activity_create,1,0,33,41
+,imageview1,,timer1
 ,imageview1
 
-main,activity_pause,0,0,42,44
+main,activity_pause,0,0,52,54
 
 
 
-main,activity_resume,0,0,38,40
+main,activity_resume,0,0,48,50
 
 
 
-main,fadetimer_tick,0,1,45,48
-,fade_timer,,imageview1
-
-
-main,globals,0,1,21,27
+main,globals,0,1,21,31
 
 
 
 main,process_globals,0,1,15,19
 
 
+
+main,timer1_tick,1,0,42,47
+,imageview1,,timer1,,btnok,,password,,username
+,btnok,,password,,username
 
 starter,application_error,0,0,27,29
 

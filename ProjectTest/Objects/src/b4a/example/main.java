@@ -377,8 +377,11 @@ public static void killProgram() {
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.objects.Timer _fade_timer = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imageview1 = null;
+public anywheresoftware.b4a.objects.Timer _timer1 = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _username = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _password = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btnok = null;
 public b4a.example.starter _starter = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
@@ -390,50 +393,59 @@ RDebugUtils.currentLine=131075;
  //BA.debugLineNum = 131075;BA.debugLine="Activity.LoadLayout(\"SplashScreen\")";
 mostCurrent._activity.LoadLayout("SplashScreen",mostCurrent.activityBA);
 RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="ImageView1.SetVisibleAnimated(1000,True)";
-mostCurrent._imageview1.SetVisibleAnimated((int) (1000),anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 131076;BA.debugLine="timer1.Initialize(\"timer1\",5000)";
+mostCurrent._timer1.Initialize(processBA,"timer1",(long) (5000));
 RDebugUtils.currentLine=131077;
- //BA.debugLineNum = 131077;BA.debugLine="fade_timer.Interval = 1000";
-_fade_timer.setInterval((long) (1000));
+ //BA.debugLineNum = 131077;BA.debugLine="timer1.Enabled = True";
+mostCurrent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
 RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="fade_timer.Enabled = True";
-_fade_timer.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 131078;BA.debugLine="ImageView1.Visible = True";
+mostCurrent._imageview1.setVisible(anywheresoftware.b4a.keywords.Common.True);
 RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131079;BA.debugLine="ImageView1.BringToFront";
+mostCurrent._imageview1.BringToFront();
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="End Sub";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
 return "";
 }
-public static String  _fadetimer_tick() throws Exception{
+public static String  _timer1_tick() throws Exception{
 RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "fadetimer_tick", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "fadetimer_tick", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub fadetimer_Tick";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="fade_timer.Enabled = False";
-_fade_timer.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="ImageView1.SetVisibleAnimated(1000,True)";
-mostCurrent._imageview1.SetVisibleAnimated((int) (1000),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=786435;
- //BA.debugLineNum = 786435;BA.debugLine="End Sub";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "timer1_tick", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "timer1_tick", null));}
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub timer1_tick";
+RDebugUtils.currentLine=196609;
+ //BA.debugLineNum = 196609;BA.debugLine="ImageView1.Visible = False";
+mostCurrent._imageview1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="timer1.Enabled = False";
+mostCurrent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=196611;
+ //BA.debugLineNum = 196611;BA.debugLine="Activity.LoadLayout(\"login\")";
+mostCurrent._activity.LoadLayout("login",mostCurrent.activityBA);
+RDebugUtils.currentLine=196612;
+ //BA.debugLineNum = 196612;BA.debugLine="UserName.RequestFocus";
+mostCurrent._username.RequestFocus();
+RDebugUtils.currentLine=196613;
+ //BA.debugLineNum = 196613;BA.debugLine="End Sub";
 return "";
 }
 }
