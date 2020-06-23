@@ -55,10 +55,9 @@ public boolean isSingleton() {
 		return pcBA;
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
-public static RemoteObject _fade_timer = RemoteObject.declareNull("anywheresoftware.b4a.objects.Timer");
 public static RemoteObject _imageview1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
 public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"fade_timer",main._fade_timer,"ImageView1",main.mostCurrent._imageview1,"Starter",Debug.moduleToString(b4a.example.starter.class)};
+		return new Object[] {"Activity",main.mostCurrent._activity,"ImageView1",main.mostCurrent._imageview1,"Starter",Debug.moduleToString(b4a.example.starter.class)};
 }
 }

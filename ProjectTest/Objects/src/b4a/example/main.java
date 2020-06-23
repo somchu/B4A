@@ -377,7 +377,6 @@ public static void killProgram() {
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.objects.Timer _fade_timer = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imageview1 = null;
 public b4a.example.starter _starter = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
@@ -393,13 +392,7 @@ RDebugUtils.currentLine=131076;
  //BA.debugLineNum = 131076;BA.debugLine="ImageView1.SetVisibleAnimated(1000,True)";
 mostCurrent._imageview1.SetVisibleAnimated((int) (1000),anywheresoftware.b4a.keywords.Common.True);
 RDebugUtils.currentLine=131077;
- //BA.debugLineNum = 131077;BA.debugLine="fade_timer.Interval = 1000";
-_fade_timer.setInterval((long) (1000));
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="fade_timer.Enabled = True";
-_fade_timer.setEnabled(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131077;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -418,22 +411,6 @@ RDebugUtils.currentLine=196608;
  //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
 RDebugUtils.currentLine=196610;
  //BA.debugLineNum = 196610;BA.debugLine="End Sub";
-return "";
-}
-public static String  _fadetimer_tick() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "fadetimer_tick", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "fadetimer_tick", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub fadetimer_Tick";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="fade_timer.Enabled = False";
-_fade_timer.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="ImageView1.SetVisibleAnimated(1000,True)";
-mostCurrent._imageview1.SetVisibleAnimated((int) (1000),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=786435;
- //BA.debugLineNum = 786435;BA.debugLine="End Sub";
 return "";
 }
 }
