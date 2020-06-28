@@ -55,17 +55,9 @@ public boolean isSingleton() {
 		return pcBA;
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
-public static RemoteObject _imageview1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
-public static RemoteObject _timer1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.Timer");
-public static RemoteObject _username = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
-public static RemoteObject _password = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
-public static RemoteObject _btnok = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
+public static RemoteObject _btnhelloworld = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
-<<<<<<< HEAD
-		return new Object[] {"Activity",main.mostCurrent._activity,"ImageView1",main.mostCurrent._imageview1,"Starter",Debug.moduleToString(b4a.example.starter.class)};
-=======
-		return new Object[] {"Activity",main.mostCurrent._activity,"BtnOK",main.mostCurrent._btnok,"ImageView1",main.mostCurrent._imageview1,"Password",main.mostCurrent._password,"Starter",Debug.moduleToString(b4a.example.starter.class),"timer1",main.mostCurrent._timer1,"UserName",main.mostCurrent._username};
->>>>>>> e8a086aa5ee8b824783db0eac60215317f107f4d
+		return new Object[] {"Activity",main.mostCurrent._activity,"BtnHelloWorld",main.mostCurrent._btnhelloworld,"Starter",Debug.moduleToString(b4a.example.starter.class)};
 }
 }

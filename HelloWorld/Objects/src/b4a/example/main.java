@@ -34,7 +34,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,61 +335,92 @@ public class main extends Activity implements B4AActivity{
             
     }
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btnhelloworld = null;
-public b4a.example.starter _starter = null;
 
-public static boolean isAnyActivityVisible() {
-    boolean vis = false;
-vis = vis | (main.mostCurrent != null);
-return vis;}
-public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 31;BA.debugLine="Activity.LoadLayout(\"1\")";
-mostCurrent._activity.LoadLayout("1",mostCurrent.activityBA);
- //BA.debugLineNum = 32;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
-return "";
-}
-public static String  _btnhelloworld_click() throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub BtnHelloWorld_Click";
- //BA.debugLineNum = 44;BA.debugLine="Msgbox(\"HellWorld\",\"Message\")";
-anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("HellWorld"),BA.ObjectToCharSequence("Message"),mostCurrent.activityBA);
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 21;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 25;BA.debugLine="Private BtnHelloWorld As Button";
-mostCurrent._btnhelloworld = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
-return "";
-}
 
 public static void initializeProcessGlobals() {
     
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
 		try {
-		        main._process_globals();
-starter._process_globals();
-		
+		        		
         } catch (Exception e) {
 			throw new RuntimeException(e);
 		}
     }
-}public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 19;BA.debugLine="End Sub";
+}
+public static boolean isAnyActivityVisible() {
+    boolean vis = false;
+vis = vis | (main.mostCurrent != null);
+return vis;}
+
+private static BA killProgramHelper(BA ba) {
+    if (ba == null)
+        return null;
+    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
+    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
+        return null;
+    return sharedProcessBA.activityBA.get();
+}
+public static void killProgram() {
+     {
+            Activity __a = null;
+            if (main.previousOne != null) {
+				__a = main.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+}
+public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btnhelloworld = null;
+public b4a.example.starter _starter = null;
+public static String  _activity_create(boolean _firsttime) throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=131072;
+ //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="Activity.LoadLayout(\"1\")";
+mostCurrent._activity.LoadLayout("1",mostCurrent.activityBA);
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+RDebugUtils.currentModule="main";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btnhelloworld_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btnhelloworld_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnhelloworld_click", null));}
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub BtnHelloWorld_Click";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="Msgbox(\"HellWorld\",\"Message\")";
+anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("HellWorld"),BA.ObjectToCharSequence("Message"),mostCurrent.activityBA);
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="End Sub";
 return "";
 }
 }
