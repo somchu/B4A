@@ -1,0 +1,90 @@
+﻿Build1=Default,b4a.MyFirstProgram
+File1=Mail.bal
+FileGroup1=Default Group
+Group=Default Group
+Library1=core
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="28"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
+NumberOfFiles=1
+NumberOfLibraries=1
+NumberOfModules=0
+Version=9.9
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: MyFirstProgram
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+	Private BtnAction As Button
+	Private EdtResult As EditText
+	Private LblComment As Label
+	Private LblMathSign As Label
+	Private LblNumber1 As Label
+	Private LblNumber2 As Label
+	Public Number1,Number2 As Int
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	'Activity.LoadLayout("Layout1")
+	Activity.LoadLayout("Mail")
+	NewProblem
+End Sub
+
+Sub NewProblem
+	Number1 = Rnd(1,10)
+	Number2 = Rnd(1,10)
+	LblNumber1.Text  = Number1
+	LblNumber2.Text = Number2
+	LblComment.Text = "Enter the Result " & CRLF & " and click OK"
+	EdtResult.Text = ""
+End Sub
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+
+Sub BtnAction_Click
+	If BtnAction.Text = "O K" Then
+		If EdtResult.Text = "" Then
+			Msgbox("No result entered","E R R O R")
+		Else
+			CheckResult
+		End If
+	Else
+		NewProblem
+		BtnAction.Text = "O K"
+	End If
+End Sub
+
+Sub CheckResult
+	If EdtResult.Text = Number1+Number2 Then
+		LblComment.Text = "G o o d....Result "& CRLF & "Click on NEW"
+		BtnAction.Text = "N E W"
+	Else 
+		LblComment.Text = "W R O N G result" & CRLF & "Enter a new result" & CRLF & "and click OK"
+	End If
+	
+End Sub
